@@ -114,7 +114,7 @@ namespace WebBanSach.Controllers
         {
             if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
             {
-                return RedirectToAction("DangNhap", "NguoiDung");
+                return RedirectToAction("DangNhap", "Users");
             }
             if (Session["GioHang"] == null)
             {
@@ -141,10 +141,10 @@ namespace WebBanSach.Controllers
             dh.ngaygiao = DateTime.Parse(ngaygiao);
             dh.giaohang = false;
             dh.thanhtoan = false;
-
-
             db.DonHangs.InsertOnSubmit(dh);
             db.SubmitChanges();
+
+
             foreach (var item in gh)
             {
                 ChiTietDonHang ctdh = new ChiTietDonHang();
@@ -154,9 +154,9 @@ namespace WebBanSach.Controllers
                 ctdh.gia = (decimal)item.giaban;
                 s = db.Saches.Single(n => n.masach == item.masach);
                 s.soluongton -= ctdh.soluong;
-                db.SubmitChanges();
-
+                
                 db.ChiTietDonHangs.InsertOnSubmit(ctdh);
+                db.SubmitChanges();
             }
             db.SubmitChanges();
             Session["Giohang"] = null;

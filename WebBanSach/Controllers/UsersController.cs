@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using WebBanSach.Models;
@@ -76,7 +78,17 @@ namespace WebBanSach.Controllers
             {
                 ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
             }
-            return RedirectToAction("Index", "Sach");
+            return RedirectToAction("GioHang", "GioHang");
         }
+
+        //Logout
+        public ActionResult DangXuat()
+        {
+            Session.Clear();//remove session
+            return RedirectToAction("DangNhap");
+        }    
     }
+
+
 }
+
