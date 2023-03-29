@@ -76,7 +76,7 @@ namespace WebBanSach.Controllers
             {
                 ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Sach");
         }
     }
 }

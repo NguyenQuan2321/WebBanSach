@@ -130,6 +130,7 @@
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SachController.cs" />
+    <Compile Include="Controllers\SapXepController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -140,6 +141,7 @@
       <DependentUpon>dbNhaSach.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\Giohang.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +204,9 @@
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
     <Content Include="Views\Users\DangKy.cshtml" />
     <Content Include="Views\Users\DangNhap.cshtml" />
+    <Content Include="Views\GioHang\Dathang.cshtml" />
+    <Content Include="Views\GioHang\XacnhanDonhang.cshtml" />
+    <Content Include="Views\SapXep\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

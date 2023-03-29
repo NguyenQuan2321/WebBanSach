@@ -26,8 +26,8 @@
                 </div>
                 <div class="panel-footer clearfix">
                     <div class="pull-right">
-                        <a href="#" class="btn btn-primary">Order</a>
-                        @Html.ActionLink("Chi tiết", "Detail", new { id = item.masach }, new { @class = "btn btn-default" })
+                        <a class="btn btn-success" href="@Url.Action("ThemGioHang", "GioHang", new { @id = item.masach, @strURL = Request.Url.ToString() })">Đặt mua</a>
+                        @Html.ActionLink("Chi tiết", "ChiTiet", new { id = item.masach }, new { @class = "btn btn-default" })
                     </div>
                 </div>
             </div>
